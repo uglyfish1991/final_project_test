@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab:wght@600&display=swap');
+
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(232, 232, 232);
+}
+
+header, footer{
+    background: rgb(66, 66, 237);
+    background: linear-gradient(0deg, rgba(66, 66, 237, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    text-align: center;
+    color: white;
+}
+
+header h1{
+    font-family: 'Roboto Slab', serif;
+    font-size: 3rem;
+    text-shadow: 1px 1px 3px black;
+    margin: 0px;
+}
+
+header p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5 rem;
+    margin-bottom: 10px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.433);
+    font-family: 'Roboto', sans-serif;
+    padding: 7px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    width: 85%;
+    background-color: rgb(255, 249, 249);
+    box-shadow: 3px 3px 12px grey;
+    margin: 0 auto;
+}
+
+details{
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgb(232, 232, 232);
+    padding: 20px;
+    box-shadow: 2px 2px 3px grey;
+    text-align: center;
+}
+
+form{
+    margin-top: 15px;
+}
+
+.input-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+input{
+    display: block;
+    margin: 5px;
+    padding: 10px;
+    width: 25%;
+}
+
+button{
+    display: block;
+    background-color: rgb(106, 197, 106);
+    padding: 7px;
+    border: 0px;
+    border-radius: 3px;
+    width:100%;
+    margin-top: 20px;
+}
+
+.weekly-summary{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* .hi-two{
+    flex-grow: 1;
+}
+.hi-one, .hi-three{
+    flex-grow: 2;
+} */
+
+.highlight{
+    background-color: rgb(225, 225, 225);
+    margin: 10px;
+    padding: 20px;
+    min-width: 30%;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.highlight p{
+    font-size: 50px;
+    margin: 12px;
+}
+
+.emphasise{
+    color:dodgerblue;
+    font-weight: 600;
+}
+
+.weekly-header{
+    width: 80%;
+    background-color: rgb(198, 245, 255);
+    border: 15px solid rgb(109, 220, 242);
+    box-shadow: 3px 3px 8px rgba(19, 73, 112, 0.467) ;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.graph-box{
+    width: 100%;
+}

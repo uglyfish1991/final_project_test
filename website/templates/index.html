@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<details>
+
+    <summary> Expand to Input Data</summary>
+    <form action="/add" method="post">
+        <hr>
+        <label>Input Data</label>
+        <div class="input-container">
+            <input type="text" name="money_made" placeholder="Enter money made">
+            <input type="text" name="biggest_spend" placeholder="Enter biggest spend">
+            <input type="text" name="bestseller" placeholder="Enter bestseller">
+            <input type="text" name="worstseller" placeholder="Enter worstseller">
+            <input type="text" name="mvp" placeholder="Enter mvp">
+        </div>
+        <button type="submit">Enter Data</button>
+    </form>
+</details>
+<hr>
+
+<div class="weekly-header">
+<h2>Weekly Overview</h2>
+
+{% if salesfigures_list|length > 0 %}
+    <p>We currently have <span class="emphasise">{{ salesfigures_list[-1].id }}</span>  records</p>
+{% else %}
+    <p>We currently have <span class="emphasise">0</span>  records. Add some above.</p>
+
+{% endif %}
+</div>
+{% if salesfigures_list|length > 0 %}
+
+    <section class="weekly-summary">
+
+    <div class="highlight hi-one">
+    The best day:
+        <p>£{{ max_spend }} </p>
+    </div>
+
+    <div class="highlight hi-two">
+        Biggest Basket:
+            <p>£{{ biggest_spend }} on {{biggest_spend_day}} <p>
+        </div>
+
+    <div class="highlight hi-3">
+        Top Staff Member:
+            <p>{{ mvp_name}} <p>
+        </div>
+
+    <div class="highlight hi-4">
+        Best Selling Item:
+            <p>{{ bestseller }} <p>
+        </div>
+
+    <div class="highlight hi-5">
+        Worst Selling Item:
+            <p>{{ worstseller }} <p>
+        </div>
+
+    <div class="highlight graph-box">
+        <img src="{{ url_for('static',filename='images/main_plot.png') }}">
+    </div>
+
+
+    </section>
+{% endif %}
+<hr>
+<!-- 
+        {% for sales in salesfigures_list %}
+        <div>
+            <p>Sale ID: {{sales.id }} | Income: £{{ sales.money_made }} | Biggest Spend : £{{ sales.biggest_spend }}</p>
+            <hr>
+        </div>
+        
+        {% endfor %} -->
+
+{% endblock %}
