@@ -2,6 +2,9 @@
 
 {% block content %}
 
+{% if message %}
+<p class="error_mes">{{message}}</p>
+{% endif %}
 <details>
 
     <summary> Expand to Input Data</summary>

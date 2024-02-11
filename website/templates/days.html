@@ -2,14 +2,34 @@
 
 {% block content %}
 
-<h1>Today's Figures</h1>
-    <p>MVP
-        {{ figures.mvp }}
-    </p>
+<h2>Today's Figures</h2>
 
-    <p> BestSeller
-        {{ figures.bestseller}}
-    </p>
+<div class="day-columns">
+    <div class="col">
+        {% if figures %}
+        <p><h4>MVP</h4>
+            {{ figures.mvp }}
+        </p>
 
-    
+        <p> <h4>BestSeller</h4>
+            {{ figures.bestseller}}
+        </p>
+        <p><h4>Profit</h4>
+            {{ figures.money_made }}
+        </p>
+
+        <p> <h4>Worstseller</h4>
+            {{ figures.worstseller}}
+        </p>
+        {% else %}
+        <p> You have not inputted the daily figure breakdown from today.</p>
+        <p>Got the data? Add it <a href="{{url_for('my_view.home')}}">here</a></p>
+        {% endif %}
+    </div>
+    <div class="col">
+        <h3>Payment Breakdown</h3>
+        <img src="{{url_for('static', filename='images/pie_chart.png')}}">
+    </div>
+</div>
+
 {% endblock %}
